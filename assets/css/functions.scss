@@ -1,6 +1,4 @@
-// _functions.scss
-
-$BASE_WIDTH: 375;
+@import './variable.scss';
 
 // function
 
@@ -36,6 +34,24 @@ $BASE_WIDTH: 375;
     background-image: -ms-linear-gradient($deg, $startColor, $endColor);
     background-image: -o-linear-gradient($deg, $startColor, $endColor);
     background-image: linear-gradient($deg, $startColor, $endColor);
+}
+
+@mixin placeholder-color($type: input, $color: red) {
+    &::#{$type}-placeholder {
+        color: $color;
+    }
+    &::-webkit-#{$type}-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &::-ms-#{$type}-placeholder {
+        color: $color;
+    }
 }
 
 @mixin flex($val: flex) {
@@ -158,5 +174,32 @@ $BASE_WIDTH: 375;
         -moz-box-direction: normal;
         flex-direction: column;
         -webkit-flex-direction: column;
+    }
+}
+
+@mixin pos($position: absolute, $type: xy) {
+    position: $position;
+    @if $type == x {
+        left: 50%;
+        top: 0;
+        @include pre(transform, translateX(-50%));
+    }
+    @if $type == y {
+        left: 0;
+        top: 50%;
+        @include pre(transform, translateY(-50%));
+    }
+    @if $type == xy {
+        left: 50%;
+        top: 50%;
+        @include pre(transform, translate(-50%, -50%));
+    }
+}
+
+// foreach
+
+@each $sizeKey, $sizeValue in $margin-bottom-sizes {
+    .mb-#{$sizeKey} {
+        margin-bottom: px2vw($sizeValue) !important;
     }
 }

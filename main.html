@@ -8,10 +8,131 @@
         <link rel="stylesheet" href="./assets/css/index.css">
     </head>
 <body>
-    <div class="main">
-        主要2222222222222
-    </div>
+    <section class="main-page">
+        <nav class="nav-tool">
+            <i class="nav-tool__icon"></i>
+            <!-- <span class="nav-tool__text">订单查询</span> -->
+        </nav>
+        <div class="main-page__header">
+            <div class="main-page__header-container">
+                <img src="./assets/img/header-mobile.png" class="main-page__header-imgs-mobile" />
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide main-page__header-container-item">111111111</div>
+                        <div class="swiper-slide main-page__header-container-item">222222222</div>
+                        <div class="swiper-slide main-page__header-container-item">3333333333</div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="main-page__header-imgs">
+                <img src="./assets/img/header-bg.png" class="main-page__header-imgs-bg" />
+            </div>
+        </div>
+        <form class="main-page__body-form">
+            <div class="main-page__body">
+                <p class="main-page__body-msg">*以下信息已加密保护</p>
+                <div class="main-page__body-form-list">
+                    <div class="main-page__body-form-row">
+                        <label class="main-page__body-form-label">姓名</label>
+                        <div class="main-page__body-form-wrap">
+                            <input type="text" placeholder="请填真实姓名" class="main-page__body-form-input" />
+                        </div>
+                    </div>
+                    <div class="main-page__body-form-row">
+                        <label class="main-page__body-form-label">身份证号</label>
+                        <div class="main-page__body-form-wrap">
+                            <input type="text" placeholder="请填写身份证号" class="main-page__body-form-input" />
+                        </div>
+                    </div>
+                    <div class="main-page__body-form-row">
+                        <label class="main-page__body-form-label">联系方式</label>
+                        <div class="main-page__body-form-wrap">
+                            <input type="text" placeholder="请填写联系方式" class="main-page__body-form-input" />
+                        </div>
+                    </div>
+                    <div class="main-page__body-form-row mb-1">
+                        <label class="main-page__body-form-label">收货地址</label>
+                        <div class="main-page__body-form-wrap">
+                            <div class="main-page__body-address 2rd">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-page__body-form-row">
+                        <textarea class="main-page__body-form-textarea" placeholder="请填写详细地址（精确到门牌号）"></textarea>
+                    </div>
+                    <div class="main-page__body-form-row">
+                        <label class="main-page__body-form-label">号码归属地</label>
+                        <div class="main-page__body-form-wrap">
+                        </div>
+                    </div>
+                    <div class="main-page__body-form-row">
+                        <label class="main-page__body-form-label">选择号码</label>
+                        <div class="main-page__body-form-wrap">
+                            <input type="text" placeholder="挑选心仪号码" class="main-page__body-form-input" />
+                        </div>
+                    </div>
+                    <div class="main-page__body-form-row">
+                        <div class="main-page__body-agreement">
+                            <input type="radio" name="type" id="agreement" />
+                            <label for="agreement">我已阅读并同意《》《》</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-page__body-form-submit">
+                <button type="button">即刻冻结1548元</button>
+            </div>
+        </form>
+        <div class="main-page__footer">
+            <div class="main-page__footer-item mb-2">
+                <h2 class="main-page__footer-title">受理流程</h2>
+                <div class="main-page__footer-process-list">
+                    <dl class="main-page__footer-process-item">
+                        <dt>Step 1</dt>
+                        <dd>
+                            <span>选择</span>
+                            <span>心仪套餐</span>
+                        </dd>
+                    </dl>
+                    <dl class="main-page__footer-process-item">
+                        <dt>Step 2</dt>
+                        <dd>
+                            <span>选择</span>
+                            <span>心仪号卡</span>
+                        </dd>
+                    </dl>
+                    <dl class="main-page__footer-process-item">
+                        <dt>Step 3</dt>
+                        <dd>
+                            <span>冻结</span>
+                            <span>一定资金</span>
+                        </dd>
+                    </dl>
+                    <dl class="main-page__footer-process-item">
+                        <dt>Step 4</dt>
+                        <dd>
+                            <span>领取</span>
+                            <span>号卡+终端</span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="main-page__footer-item">
+                <h2 class="main-page__footer-title">活动规则</h2>
+                <div class="main-page__footer-section">
+                    <p>1、您需要新办理联通号卡一张，并在广发银行冻结部分资 金。若您没有广发银行借记卡，可以根据提示完成广发银 行借记卡II类户开户并进行转账冻结。</p>
+                    <p>2、合约期间，您无法申请停机、报销、销号、过户等，若 因逾期欠费等其他情况导致停机构成违约，银行将从本合 约冻结的资金中扣除约定金额，合约终止。</p>
+                    <p>3、号码归属地为江苏省。</p>
+                    <p>4、本活动规则最终解释权归中国联通江苏省分公司所有。</p>
+                </div>
+            </div>
+        </div>
+    </section>
     <script src="./lib/jquery.min.js" type="text/javascript"></script>
+    <script src="./lib/jquery.center.min.js" type="text/javascript"></script>
+    <script src="./lib/jquery.msg.min.js" type="text/javascript"></script>
     <script src="./lib/swiper/swiper-bundle.min.js" type="text/javascript"></script>
     <script src="./assets/js/index.js" type="text/javascript"></script>
 </body>
