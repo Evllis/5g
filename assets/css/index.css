@@ -1,0 +1,22 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/* 测试用 */
+.index-page {
+  position: relative;
+}
+
+.qrcode {
+  position: absolute;
+  right: 9%;
+  bottom: 3%;
+  width: 18%;
+}
