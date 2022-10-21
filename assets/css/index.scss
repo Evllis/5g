@@ -70,6 +70,13 @@ textarea {
             width: px2vw(168);
             z-index: 3;
         }
+        .main-page__header-imgs-title {
+            position: absolute;
+            left: px2vw(14);
+            top: px2vw(44);
+            width: px2vw(229);
+            z-index: 4;
+        }
         .swiper {
             overflow: initial;
         }
@@ -89,16 +96,36 @@ textarea {
         }
         &-item {
             width: 84% !important;
-            height: px2vw(177);
+            height: px2vw(202);
             background-color: white;
             border-radius: px2vw(15);
             box-shadow: 0px px2vw(1) px2vw(12) 0 rgba(91, 108, 221, 0.11);
             transition: 300ms;
             margin: 0 px2vw(-4);
+            background: url(#{$ASSETS_SWIPER_ITEM_BG_URL}) no-repeat center / cover;
             @include pre(transform, translateZ(0) scale(0.84) !important);
             @include flex();
             @include justify-content();
             @include align-items();
+        }
+        &-bank {
+            position: absolute;
+            left: px2vw(15);
+            bottom: px2vw(12);
+            width: px2vw(146);
+            height: px2vw(29);
+            background: url(#{$ASSETS_BANK_LOGO_URL}) no-repeat center / cover;
+            z-index: 1;
+        }
+        &-mark {
+            position: absolute;
+            left: px2vw(10);
+            top: px2vw(4);
+            font-size: px2vw(14);
+            line-height: px2vw(20);
+            color: #EC6403;
+            z-index: 1;
+            font-weight: 600;
         }
         &-item.swiper-slide-active,.swiper-slide-duplicate-active{
             @include pre(transform, translateZ(0) scale(1) !important);
@@ -310,7 +337,7 @@ textarea {
         display: inline-block;
         width: px2vw(14);
         height: px2vw(15);
-        background: url(#{$ASSETS_FOOTER_BG_URL}) no-repeat center / cover;
+        background: url(#{$ASSETS_ICON_BACK_URL}) no-repeat center / cover;
     }
     &__text {
         font-size: px2vw(16);

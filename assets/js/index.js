@@ -2,7 +2,7 @@
 
     var Bond = function() {
         this.ajaxUrl = {
-            packageList: 'https://www.myafq.com/advanceMargin/marginPackage/packageList'
+            packageList: 'https://www.techwis.cn/advanceMargin/marginPackage/packageList'
         }
     }
 
@@ -15,6 +15,29 @@
             $('.nav-tool__icon').on('click', function() {
                 win.location.href = 'https://evllis.github.io/5g';
             });
+        },
+
+        renderSwiperHTML: function(res) {
+            var html = '';
+            res.forEach(function(item) {
+                html += '<div class="swiper-slide main-page__header-container-item" data-code="'+ item.packageCode +'">\
+                            <div class="main-page__header-container-mark">享直降</div>\
+                            <div class="main-page__header-container-wrap">\
+                                <div class="main-page__header-container-amount">\
+                                    <span class="amount">'+ item.downAmount +'</span>\
+                                    <span class="amount-unit">元</span>\
+                                </div>\
+                                <div class="main-page__header-container-desc">'+ item.packageDesc +'</div>\
+                            </div>\
+                            <div class="main-page__header-container-bank"></div>\
+                            <div class="main-page__header-container-money">\
+                                <span class="money">'+ item.packageAmount +'</span>\
+                                <span class="money-unit">元/月</span>\
+                            </div>\
+                        </div>';
+            });
+            $('.swiper-wrapper').html(html);
+            this.initSwiper();
         },
 
         initSwiper: function() {
@@ -30,7 +53,16 @@
             })
         },
 
+        showMsg: function(msg) {
+            $.msg({
+                bgPath: '/lib/jquery-msg/',
+                content: msg
+            });
+        },
+
         getPackageList: function() {
+            var that = this;
+            console.log(55555555, this.ajaxUrl.packageList);
             $.ajax({
                 url: this.ajaxUrl.packageList,
                 type: 'POST',
@@ -41,17 +73,20 @@
                 },
                 crossDomain: true,
                 success: function(res) {
-                    console.log(11111111, res);
+                    if (String(res.returnCode) === '1000') {
+                        that.renderSwiperHTML((res.data && res.data.length) ? res.data : []);
+                    } else {
+                        that.showMsg(res.returnMsg);
+                    }
                 },
-                error: function(err) {
-                    console.log(222222222, err);
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    that.showMsg(textStatus);
                 }
             });
         },
 
         init: function() {
             this.initNavBack();
-            this.initSwiper();
             this.getPackageList();
         }
 
